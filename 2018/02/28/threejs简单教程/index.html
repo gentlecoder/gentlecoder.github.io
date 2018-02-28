@@ -6,18 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://gentlecoder.com">
-  <title>Archives | gentlecoder的博客</title>
+  <title>&#39;threejs简单教程&#39; | gentlecoder的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="目前就职于中兴。擅长各项前端技能，深入研究各种前端框架。">
-<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,vue,angularjs">
-<meta property="og:type" content="website">
-<meta property="og:title" content="gentlecoder的博客">
-<meta property="og:url" content="http://gentlecoder.com/archives/index.html">
+  <meta name="description" content="简单介绍一下threejs的入门知识~~~~">
+<meta name="keywords" content="前端,threejs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="&#39;threejs简单教程&#39;">
+<meta property="og:url" content="http://gentlecoder.com/2018/02/28/threejs简单教程/index.html">
 <meta property="og:site_name" content="gentlecoder的博客">
-<meta property="og:description" content="目前就职于中兴。擅长各项前端技能，深入研究各种前端框架。">
+<meta property="og:description" content="简单介绍一下threejs的入门知识~~~~">
+<meta property="og:image" content="http://gentlecoder.com/assets/blogImg/threejs.png">
+<meta property="og:image" content="http://techbrood.com/ueditor/php/upload/image/20160525/1464141326848754.png">
+<meta property="og:updated_time" content="2018-02-28T10:22:08.224Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="gentlecoder的博客">
-<meta name="twitter:description" content="目前就职于中兴。擅长各项前端技能，深入研究各种前端框架。">
+<meta name="twitter:title" content="&#39;threejs简单教程&#39;">
+<meta name="twitter:description" content="简单介绍一下threejs的入门知识~~~~">
+<meta name="twitter:image" content="http://gentlecoder.com/assets/blogImg/threejs.png">
   
     <link rel="alternative" href="/atom.xml" title="gentlecoder的博客" type="application/atom+xml">
   
@@ -171,36 +175,155 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-threejs简单教程" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/28/threejs简单教程/" class="archive-article-date">
-  	<time datetime="2018-02-28T10:06:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-28</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/28/threejs简单教程/">&#39;threejs简单教程&#39;</a>
+    <h1 class="article-title" itemprop="name">
+      &#39;threejs简单教程&#39;
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/02/28/threejs简单教程/" class="archive-article-date">
+  	<time datetime="2018-02-28T10:06:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/assets/blogImg/threejs.png" alt="threejs">      </p>
+<blockquote>
+<p>简单介绍一下threejs的入门知识~~~~     </p>
+</blockquote>
+<a id="more"></a>
+<h2 id="常用概念"><a href="#常用概念" class="headerlink" title="常用概念"></a>常用概念</h2><ul>
+<li>场景</li>
+</ul>
+<blockquote>
+<p>场景允许你设置哪些对象被<code>threejs</code>渲染以及渲染在哪里。我们在场景中放置对象、灯光和相机。</p>
+</blockquote>
+<ul>
+<li>相机</li>
+</ul>
+<blockquote>
+<p>相机的抽象基类。当我们构建新类型的相机时总是应该继承这个类。一般用的是远景相机以及正交相机。</p>
+</blockquote>
+<ul>
+<li>渲染器</li>
+</ul>
+<blockquote>
+<p>目前主要是WebGL渲染器，canvas渲染器在未来版本的<code>threejs</code>中将不会被支持。</p>
+</blockquote>
+<ul>
+<li>光照</li>
+</ul>
+<blockquote>
+<p>使用的比较多的是点光源、平行光、环境光以及聚光源，光照一般配合其相关的阴影一起使用。</p>
+</blockquote>
+<ul>
+<li>模型</li>
+</ul>
+<blockquote>
+<p>一个Geometry存有用来描述一个三维模型的所有必要数据。</p>
+</blockquote>
+<ul>
+<li>材质</li>
+</ul>
+<blockquote>
+<p>用于定义3D物体面所用材质，不同的材质其与光源相互作用产生的效果不同。</p>
+</blockquote>
+<ul>
+<li>纹理</li>
+</ul>
+<blockquote>
+<p>用于定义3D物体面上的图案和纹理，可以导入外部文件进行渲染。</p>
+</blockquote>
+<ul>
+<li>对象</li>
+</ul>
+<blockquote>
+<p>一个3D模型对应一个对象。</p>
+</blockquote>
+<ul>
+<li>辅助对象</li>
+</ul>
+<blockquote>
+<p>用于创建3D对象时添加相关的辅助点、线、面。</p>
+</blockquote>
+<ul>
+<li>动画</li>
+</ul>
+<blockquote>
+<p>定义3D物体的动画效果</p>
+</blockquote>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>Threejs使用面向对象的方式来构建程序，包含3个基本对象： <strong>场景（scene）</strong>, <strong>相机（camera）</strong>, 以及一个<strong>渲染器（renderer）</strong>。 拿电影来类比的话，场景对应于整个布景空间，相机是拍摄镜头，渲染器用来把拍摄好的场景转换成胶卷（对于网页来讲，是电脑屏幕）。 场景和相机代表了3D观察空间和数据模型，渲染器则包含了WebGL绘图上下文和着色器。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> scene = <span class="keyword">new</span> THREE.Scene();</span><br><span class="line"><span class="keyword">var</span> camera = <span class="keyword">new</span> THREE.PerspectiveCamera( <span class="number">75</span>, <span class="built_in">window</span>.innerWidth / <span class="built_in">window</span>.innerHeight, <span class="number">0.1</span>, <span class="number">1000</span> );</span><br><span class="line"><span class="keyword">var</span> renderer = <span class="keyword">new</span> THREE.WebGLRenderer();</span><br><span class="line">renderer.setSize( <span class="built_in">window</span>.innerWidth, <span class="built_in">window</span>.innerHeight );</span><br><span class="line"><span class="built_in">document</span>.body.appendChild( renderer.domElement );</span><br></pre></td></tr></table></figure>
+<p>上面的代码构建了scene, camera 和 renderer。Three.js的架构支持多种camera，这里使用最常见的远景相机（PerspectiveCamera），也就是类似于人眼观察的方式。第一个属性75设置的是<strong>视角（field of view）</strong>。</p>
+<p>第二个属性设置的是相机拍摄面的<strong>长宽比（aspect ratio）</strong>。我们几乎总是会使用元素的宽除以高，否则会出现挤压变形。</p>
+<p>接下来的2个属性是<strong>近裁剪面（near clipping plane）</strong> 和 <strong>远裁剪面（far clipping plane）</strong>。下面这张图可以帮助你理解：</p>
+<p><img src="http://techbrood.com/ueditor/php/upload/image/20160525/1464141326848754.png" alt="img"></p>
+<p>这几个参数所限定的绿色3D空间被称之为视椎体（View Frustum），用来裁剪视图，在该视锥体以外的物体将不会被渲染。我们暂时可以先不管，但你需要了解这个空间和渲染性能有关。</p>
+<p>接下来是渲染器，所有魔法效果都在这里产生。除了我们这里使用的WebGLRenderer，three.js还支持一些其它渲染器，基本上只是用来回退处理那些不支持WebGL的旧式用户浏览器。</p>
+<p>除了创建renderer实例，我们还需要设置渲染空间的尺寸，一般就使用目标屏幕的宽高（window.innerWidth和window.innerHeight），也可以给定一个小尺寸。</p>
+<p>如果你想保持渲染空间的尺寸，但使用一个较低的分辨率，你可以在调用<strong>setSize</strong>的时候设置参数<strong>updateStyle</strong>为false，比如 <strong>setSize(window.innerWidth/2, window.innerHeight/2, false)</strong> 将使用1/2分辨率来绘制你的应用程序，假定<canvas>为100%的宽高。</canvas></p>
+<p>最后，我们把 <strong>renderer</strong> 元素添加到HTML文档中。这里是一个 <canvas> 元素，渲染器用来显示场景。</canvas></p>
+<p>上面的都是准备工作，电影布景都好了，演员还没进场。接下来我们添加“演员”（3D立方体）。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> geometry = <span class="keyword">new</span> THREE.BoxGeometry( <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span> );</span><br><span class="line"><span class="keyword">var</span> material = <span class="keyword">new</span> THREE.MeshBasicMaterial( &#123; <span class="attr">color</span>: <span class="number">0x00ff00</span> &#125; );</span><br><span class="line"><span class="keyword">var</span> cube = <span class="keyword">new</span> THREE.Mesh( geometry, material );</span><br><span class="line">scene.add( cube );</span><br><span class="line">camera.position.z = <span class="number">5</span>;</span><br></pre></td></tr></table></figure>
+<p>为了创建一个立方体，我们需要使用<strong>盒子模型（BoxGeometry）</strong>，这是一个包含立方体所有顶点和填充面的对象。</p>
+<p>除了这个几何模型（geometry）外，我们还需要一个材料（material）来对其着色。Three.js支持多种材料，现在我们只使用 <strong>网孔基础材料（MeshBasicMaterial）</strong>。 所有材料都含有一个属性对象。这里简单起见，我们只提供了颜色值为<strong>0x00ff00</strong>，表示绿色。这和CSS和Photoshop中16进制颜色值一样。</p>
+<p>第3件事是我们需要一个<strong>网孔(Mesh)</strong>。网孔是用来承载几何模型的一个对象，还可以把材料应用到它上面，然后添加到场景中完成旋转动画。</p>
+<p>默认情况下，当我们调用 <strong>scene.add()</strong> 时，对象将被添加到原点处，即坐标点<strong>(0,0,0)</strong>，这将导致相机和立方体发生空间重叠。为了避免这样，我们把相机（camera）的位置移出来一些。</p>
+<h2 id="渲染场景"><a href="#渲染场景" class="headerlink" title="渲染场景"></a>渲染场景</h2><p>如果你在新建作品中拷贝了前述的代码，并点击[运行]，你还是看不到任何东西，因为我们还没有实际去渲染它。为此，我们需要一个 <strong>渲染循环（render loop）</strong>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">render</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	requestAnimationFrame( render );</span><br><span class="line">	renderer.render( scene, camera );</span><br><span class="line">&#125;</span><br><span class="line">render();</span><br></pre></td></tr></table></figure>
+<p>这将创建一个循环，以每秒60次的频率来绘制场景。阅读过本站相关教程的同学，可能会熟悉requestAnimationFrame这个函数，它用来替代 <strong>setInterval</strong>， 这个新接口具备多个优点，比如浏览器Tab切换后停止渲染以节约资源、和屏幕刷新同步避免无效刷新、在不支持该接口的浏览器中能安全回退为setInterval。</p>
+<h2 id="创建动画"><a href="#创建动画" class="headerlink" title="创建动画"></a>创建动画</h2><p>如果你一步步完成前述的代码，点击[运行]，你现在应该可以看到一个绿色的立方体，现在我们添加一点动画，让它转动起来。</p>
+<p>把如下代码加在 <strong>render</strong> 函数中 <strong>renderer.render</strong> 这行代码之前：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cube.rotation.x += <span class="number">0.1</span>;</span><br><span class="line">cube.rotation.y += <span class="number">0.1</span>;</span><br></pre></td></tr></table></figure>
+<p>这样我们就使用Three.js完成了一个旋转的立方体。基本上，如果要改变立方体的运动，我们都是在render循环中处理。</p>
+<h2 id="DEMO"><a href="#DEMO" class="headerlink" title="DEMO"></a>DEMO</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span>My first Three.js app<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">			body &#123; margin: 0; &#125;</span></span><br><span class="line"><span class="undefined">			canvas &#123; width: 100%; height: 100% &#125;</span></span><br><span class="line"><span class="undefined">		</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"//wow.techbrood.com/libs/three.r73.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">			<span class="keyword">var</span> scene = <span class="keyword">new</span> THREE.Scene();</span></span><br><span class="line"><span class="javascript">			<span class="keyword">var</span> camera = <span class="keyword">new</span> THREE.PerspectiveCamera( <span class="number">75</span>, <span class="built_in">window</span>.innerWidth/<span class="built_in">window</span>.innerHeight, <span class="number">0.1</span>, <span class="number">1000</span> );</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">			<span class="keyword">var</span> renderer = <span class="keyword">new</span> THREE.WebGLRenderer();</span></span><br><span class="line"><span class="javascript">			renderer.setSize( <span class="built_in">window</span>.innerWidth, <span class="built_in">window</span>.innerHeight );</span></span><br><span class="line"><span class="javascript">			<span class="built_in">document</span>.body.appendChild( renderer.domElement );</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">			<span class="keyword">var</span> geometry = <span class="keyword">new</span> THREE.BoxGeometry( <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span> );</span></span><br><span class="line"><span class="javascript">			<span class="keyword">var</span> material = <span class="keyword">new</span> THREE.MeshBasicMaterial( &#123; <span class="attr">color</span>: <span class="number">0x00ff00</span> &#125; );</span></span><br><span class="line"><span class="javascript">			<span class="keyword">var</span> cube = <span class="keyword">new</span> THREE.Mesh( geometry, material );</span></span><br><span class="line"><span class="undefined">			scene.add( cube );</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">			camera.position.z = 5;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">			<span class="keyword">var</span> render = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="undefined">				requestAnimationFrame( render );</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">				cube.rotation.x += 0.1;</span></span><br><span class="line"><span class="undefined">				cube.rotation.y += 0.1;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">				renderer.render(scene, camera);</span></span><br><span class="line"><span class="undefined">			&#125;;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">			render();</span></span><br><span class="line"><span class="undefined">		</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -216,46 +339,106 @@ var _hmt = _hmt || [];
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://gentlecoder.com/2018/02/28/threejs简单教程/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/27/hello-world/" class="archive-article-date">
-  	<time datetime="2018-02-27T09:42:06.827Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-27</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/02/27/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/27/hello-world/">Hello World</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -278,8 +461,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
