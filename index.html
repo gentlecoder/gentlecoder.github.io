@@ -173,6 +173,85 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-页面展示html标签和JavaScript代码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/06/页面展示html标签和JavaScript代码/">页面展示html标签和JavaScript代码</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/06/页面展示html标签和JavaScript代码/" class="archive-article-date">
+  	<time datetime="2018-03-06T11:27:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在前端日常编码的过程中经常会遇到这样的问题：比如说某个博客留言里面，用户输入了一段html或者JavaScript代码，而我们又要考虑到xss的问题，那么我们如何将用户输入的内容原样展示出来呢？<code>&lt;textarea&gt;</code>是个选择，有人说<code>&lt;pre&gt;</code>以及<code>&lt;code&gt;</code>也可以，但是在实际操作过程中，我们会发现如<code>&lt;svg/onclick=alert(1)&gt;</code>这样的代码仍会被浏览器解释成html代码，很让人头疼。</p>
+<p>这里给大家介绍一种简单的方法，把用户输入的内容用下面的函数进行HTML编码后再显示到页面上就行了：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// HTML转义函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">encodeHtml</span>(<span class="params">s</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> s.replace(</span><br><span class="line">        /<span class="string">"|&amp;|'|&lt;|&gt;|[\x00-\x20]|[\x7F-\xFF]|[\u0100-\u2700]/g,</span></span><br><span class="line"><span class="string">        function($0)&#123;</span></span><br><span class="line"><span class="string">            var c = $0.charCodeAt(0);</span></span><br><span class="line"><span class="string">            switch(c)&#123;</span></span><br><span class="line"><span class="string">            case 13: return "</span>&lt;br /&gt;<span class="string">";</span></span><br><span class="line">            case 32: return "&amp;#160;";</span><br><span class="line">            <span class="keyword">default</span>: <span class="keyword">return</span> <span class="string">"&amp;#"</span>+c+<span class="string">";"</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/03/06/页面展示html标签和JavaScript代码/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-vue简单教程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -512,6 +591,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">vuejs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">html</a>
               </li>
             
             <div class="clearfix"></div>
