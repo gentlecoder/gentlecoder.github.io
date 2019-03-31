@@ -2,19 +2,22 @@
 
 menu:
   主页: /
-  相册: /photos
+  随笔: /tags/git/
+  #相册: /photos
+  #pixiv: /pixiv
+  #书单: /booklist
 
 # SubNav
 subnav:
   github: "https://github.com/gentlecoder"
-  weibo: "#"
-  rss: "#"
-  zhihu: "#"
+  # weibo: "#"
+  # rss: "#"
+  # zhihu: "#"
   #qq: "#"
   #weixin: "#"
   #jianshu: "#"
   #douban: "#"
-  #segmentfault: "#"
+  segmentfault: "https://segmentfault.com/u/gentlecoder"
   #bilibili: "#"
   #acfun: "#"
   mail: "mailto:610249080@qq.com"
@@ -35,7 +38,7 @@ root: /
 # 文章太长，截断按钮文字
 excerpt_link: more
 # 文章卡片右下角常驻链接，不需要请设置为false
-show_all_link: '展开全文'
+show_all_link: "展开全文"
 # 数学公式
 mathjax: false
 # 是否在新窗口打开链接
@@ -46,7 +49,7 @@ fancybox: true
 # 打赏type设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏
 reward_type: 2
 # 打赏wording
-reward_wording: '谢谢你请我吃糖果'
+reward_wording: "谢谢你请我吃糖果"
 # 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg
 alipay: /assets/img/alipay.jpg
 # 微信二维码图片地址
@@ -58,13 +61,13 @@ toc: 1
 # 根据自己的习惯来设置，如果你的目录标题习惯有标号，置为true即可隐藏hexo重复的序号；否则置为false
 toc_hide_index: true
 # 目录为空时的提示
-toc_empty_wording: '目录，不存在的…'
+toc_empty_wording: "目录，不存在的…"
 
 # 是否有快速回到顶部的按钮
 top: true
 
 # Miscellaneous
-baidu_analytics: 'ea26d735618aa43934169d6186d9eb17'
+baidu_analytics: "ea26d735618aa43934169d6186d9eb17"
 google_analytics: false
 favicon: /assets/favicon.png
 
@@ -92,18 +95,18 @@ changyan_conf: false
 disqus: false
 
 #5、Gitment
-gitment_owner: false      #你的 GitHub ID
-gitment_repo: ''          #存储评论的 repo
+gitment_owner: false #你的 GitHub ID
+gitment_repo: "" #存储评论的 repo
 gitment_oauth:
-  client_id: ''           #client ID
-  client_secret: ''       #client secret
+  client_id: "" #client ID
+  client_secret: "" #client secret
 
 # 样式定制 - 一般不需要修改，除非有很强的定制欲望…
 style:
   # 头像上面的背景颜色
-  header: '#4d4d4d'
+  header: "#4d4d4d"
   # 右滑板块背景
-  slider: 'linear-gradient(200deg,#a0cfe4,#e8c37e)'
+  slider: "linear-gradient(200deg,#a0cfe4,#e8c37e)"
 
 # slider的设置
 slider:
@@ -116,9 +119,9 @@ slider:
 #smart_menu:
 #  friends: false
 smart_menu:
-  innerArchive: '所有文章'
-  friends: '友情链接'
-  aboutme: '关于我'
+  innerArchive: "所有文章"
+  friends: "友情链接"
+  aboutme: "关于我"
 
 friends:
   # 友情链接1: http://localhost:4000/

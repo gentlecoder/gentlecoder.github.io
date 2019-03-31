@@ -1,0 +1,46 @@
+---
+layout: post
+slug: "pixiv"
+title: "pixiv"
+noDate: "true"
+comments: "false"
+---
+
+<link rel="stylesheet" href="./animation.css">
+<link rel="stylesheet" href="./lightbox.css">
+<link rel="stylesheet" href="./style.css">
+<div class="searchBox">
+	<div class="searchForm">
+		<input id="searchField" type="text" placeholder="Enter to search"/>
+		<div class="close">
+			<span class="front"></span>
+			<span class="back"></span>
+		</div>
+	</div>
+</div>
+<div id="tags"></div>
+<div id="waterfall"></div>
+<div id="gototop">
+	<img  src="/assets/img/rocket.svg">
+</div>
+<div class="loader" id="loader">
+	<img class="loaderimg" src="/assets/img/loading.svg">
+</div>
+<div id="info"></div>
+<script src="./lightbox.js"></script>
+<script type="text/javascript" src="./warterfall.js"></script>
+<script type="text/javascript" src="./index.js"></script>
+<!-- <script>
+  (function() {
+    var loadScript = function(path) {
+      var $script = document.createElement("script");
+      document.getElementsByTagName("body")[0].appendChild($script);
+      $script.setAttribute("src", path);
+    };
+    setTimeout(function() {
+      loadScript("./lightbox.js");
+      loadScript("./warterfall.js");
+      loadScript("./index.js");
+    }, 0);
+  })();
+</script> -->
