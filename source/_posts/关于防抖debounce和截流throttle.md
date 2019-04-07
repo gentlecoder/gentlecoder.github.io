@@ -26,7 +26,7 @@ const debounce = (fn, time = 1000, immediate) => {
   let timer;
   return (...args) => {
     if (immediate) fn.call(this, ...args);
-    if (timer) learTimeout(timer);
+    if (timer) clearTimeout(timer);
     timer = setTimeout(() => fn.call(this, ...args), time);
   };
 };
