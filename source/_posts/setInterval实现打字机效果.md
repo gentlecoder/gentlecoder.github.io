@@ -10,7 +10,7 @@ tags:
 <html>
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
-<title>JavaScript Typewriter - MDN Example</title>
+<title>JavaScript Typewriter - Example</title>
 <script type="text/javascript">
 function Typewriter (sSelector, nRate) {
 
@@ -24,7 +24,7 @@ function Typewriter (sSelector, nRate) {
 
   function scroll (oSheet, nPos, bEraseAndStop) {
     if (!oSheet.hasOwnProperty("parts") || aMap.length < nPos) { return true; }
-
+		// 通过bExit来控制是否已经打印完成
     var oRel, bExit = false;
 
     if (aMap.length === nPos) { aMap.push(0); }
@@ -33,14 +33,14 @@ function Typewriter (sSelector, nRate) {
       oRel = oSheet.parts[aMap[nPos]];
 
       scroll(oRel, nPos + 1, bEraseAndStop) ? aMap[nPos]++ : bExit = true;
-
+			// 没有停止或者擦除并且是存在值的文字节点
       if (bEraseAndStop && (oRel.ref.nodeType - 1 | 1) === 3 && oRel.ref.nodeValue) {
-        bExit = true;
+        bExit = true;  // 控制循环
         oCurrent = oRel.ref;
-        sPart = oCurrent.nodeValue;
+        sPart = oCurrent.nodeValue;  // 保存内容
         oCurrent.nodeValue = "";
       }
-
+			// 这里清空了文字子节点的内容，不然会直接出现文字
       oSheet.ref.appendChild(oRel.ref);
       if (bExit) { return false; }
     }
@@ -50,8 +50,9 @@ function Typewriter (sSelector, nRate) {
   }
 
   function typewrite () {
+    // 当aSheets[0]遍历完了之后才开始nIdx++
     if (sPart.length === 0 && scroll(aSheets[nIdx], 0, true) && nIdx++ === aSheets.length - 1) { clean(); return; }
-
+		// 开始打字
     oCurrent.nodeValue += sPart.charAt(0);
     sPart = sPart.slice(1);
   }
@@ -60,13 +61,14 @@ function Typewriter (sSelector, nRate) {
     this.ref = oNode;
     if (!oNode.hasChildNodes()) { return; }
     this.parts = Array.prototype.slice.call(oNode.childNodes);
-
+		// 将需要打字机效果的节点的子节点清空，递归遍历，将节点信息存入对象中
     for (var nChild = 0; nChild < this.parts.length; nChild++) {
       oNode.removeChild(this.parts[nChild]);
       this.parts[nChild] = new Sheet(this.parts[nChild]);
     }
   }
 
+  // aMap控制打印队列
   var
     nIntervId, oCurrent = null, bTyping = false, bStart = true,
     nIdx = 0, sPart = "", aSheets = [], aMap = [];
@@ -143,7 +145,7 @@ span.intLink, a, a:visited {
  
 <body>
 
-<p id="copyleft" style="font-style: italic; font-size: 12px; text-align: center;">CopyLeft 2012 by <a href="https://developer.mozilla.org/" target="_blank">Mozilla Developer Network</a></p>
+<p id="copyleft" style="font-style: italic; font-size: 12px; text-align: center;">CopyLeft 2019 by <a href="http://gentlecoder.cn/" target="_blank">gentlecoder</a></p>
 <p id="controls" style="text-align: center;">[&nbsp;<span class="intLink" onclick="oTWExample1.play();">Play</span> | <span class="intLink" onclick="oTWExample1.pause();">Pause</span> | <span class="intLink" onclick="oTWExample1.terminate();">Terminate</span>&nbsp;]</p>
 <div id="info">
 Vivamus blandit massa ut metus mattis in fringilla lectus imperdiet. Proin ac ante a felis ornare vehicula. Fusce pellentesque lacus vitae eros convallis ut mollis magna pellentesque. Pellentesque placerat enim at lacus ultricies vitae facilisis nisi fringilla. In tincidunt tincidunt tincidunt.
