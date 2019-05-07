@@ -5,6 +5,58 @@ tags:
   - JavaScript
 ---
 
+## 简单打字机
+
+**HTML**
+
+```html
+<pre id="test">
+</pre>
+```
+
+js
+
+```js
+const test = `function loadItem(container, text) {
+  let num = 0
+  let sum = text.length
+  let interval = 16
+
+  const startLoad = () => {
+    setTimeout(() => {
+      num += 1
+      if (num <= sum) {
+
+        let str = text.substr(0, num)
+
+        container.scrollTop = 100000
+
+        container.innerHTML = str
+
+        setTimeout(() => {
+          startLoad()
+        }, interval)
+
+      }
+    }, interval)
+  }
+
+  startLoad()
+}`;
+
+const loadText = (str, container) => {
+  let num = 0,
+    len = str.length;
+  let interval = setInterval(() => {
+    if (num > len) clearInterval(interval);
+    container.textContent = str.slice(0, num++);
+  }, 20);
+};
+loadText(test, document.getElementById("test"));
+```
+
+## 来点复杂的
+
 ```html
 <!doctype html>
 <html>
