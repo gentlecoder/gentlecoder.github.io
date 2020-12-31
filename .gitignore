@@ -4,3 +4,4 @@ package-lock.json
 .deploy_git/
 /public
 db.json
+.vscode/.history/
