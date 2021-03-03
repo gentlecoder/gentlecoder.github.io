@@ -7,6 +7,8 @@ tags:
 
 ## 基本定义
 
+> Intersection Observer API提供了一种异步检测目标元素与祖先元素或 [viewport](https://developer.mozilla.org/zh-CN/docs/Glossary/Viewport) 相交情况变化的方法。
+>
 > `IntersectionObserver`对象的 observe()方法向`IntersectionObserver`对象监听的目标集合添加一个元素。一个监听者有一组阈值和一个根，但是可以监视多个目标元素，以查看这些目标元素可见区域的变化。调用 IntersectionObserver.unobserve()方法可以停止观察元素。
 
 以上是mdn对`IntersectionObserver`的定义，通俗一点的话来讲就是，该API可以通过设置一组阈值和根元素，来对目标元素相对于根元素的位置进行监听，从而达到响应变化的目的。
