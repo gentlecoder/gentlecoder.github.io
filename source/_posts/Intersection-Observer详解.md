@@ -7,11 +7,11 @@ tags:
 
 ## 基本定义
 
-> Intersection Observer API提供了一种异步检测目标元素与祖先元素或 [viewport](https://developer.mozilla.org/zh-CN/docs/Glossary/Viewport) 相交情况变化的方法。
+> Intersection Observer API 提供了一种异步检测目标元素与祖先元素或 [viewport](https://developer.mozilla.org/zh-CN/docs/Glossary/Viewport) 相交情况变化的方法。
 >
 > `IntersectionObserver`对象的 observe()方法向`IntersectionObserver`对象监听的目标集合添加一个元素。一个监听者有一组阈值和一个根，但是可以监视多个目标元素，以查看这些目标元素可见区域的变化。调用 IntersectionObserver.unobserve()方法可以停止观察元素。
 
-以上是mdn对`IntersectionObserver`的定义，通俗一点的话来讲就是，该API可以通过设置一组阈值和根元素，来对目标元素相对于根元素的位置进行监听，从而达到响应变化的目的。
+以上是 mdn 对`IntersectionObserver`的定义，通俗一点的话来讲就是，该 API 可以通过设置一组阈值和根元素，来对目标元素相对于根元素的位置进行监听，从而达到响应变化的目的。
 
 <!--more-->
 
@@ -24,13 +24,11 @@ tags:
 - 检测广告的曝光情况——为了计算广告收益，需要知道广告元素的曝光情况
 - 在用户看见某个区域时执行任务或播放动画
 
-通常要实现这样的效果都要用到事件监听，并且需要调用[`Element.getBoundingClientRect()`](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/getBoundingClientRect) 方法或者通过`clientHeight`、`offsetTop`、`scrollTop`等频繁计算得到元素的边界信息。而事件监听和调用这些API 都是在主线程上运行，因此频繁触发、调用可能会造成性能问题。这种检测方法极其怪异且不优雅。
+通常要实现这样的效果都要用到事件监听，并且需要调用[`Element.getBoundingClientRect()`](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/getBoundingClientRect) 方法或者通过`clientHeight`、`offsetTop`、`scrollTop`等频繁计算得到元素的边界信息。而事件监听和调用这些 API 都是在主线程上运行，因此频繁触发、调用可能会造成性能问题。这种检测方法极其怪异且不优雅。
 
 在某次研发过程中，我们有注意到在一些页面上进行滚动的时候明显出现了一些卡顿的现象，起初觉得是由于非原生开发引起的性能问题，后来进一步定位发现是几个组件争相监听`scroll`事件，不停触发调用，造成了性能问题，用户体验很差。
 
-而`IntersectionObserver`API的出现再一定程度上很好的解决了这些问题。
-
-
+而`IntersectionObserver`API 的出现再一定程度上很好的解决了这些问题。
 
 ## 基本语法
 
@@ -38,21 +36,21 @@ tags:
 const options = {
   root: document.body,
   rootMargin: '0px',
-  threshold: 0
+  threshold: 0,
 }
 
-function callback (entries, observer) {
-  console.log(observer);
-  entries.forEach(entry => {
-    console.log(entry);
-  });
+function callback(entries, observer) {
+  console.log(observer)
+  entries.forEach((entry) => {
+    console.log(entry)
+  })
 }
 
-let observer = new IntersectionObserver(callback, options);
-observer.observe(targetElement);
+let observer = new IntersectionObserver(callback, options)
+observer.observe(targetElement)
 ```
 
-### options相关属性
+### options 相关属性
 
 **`root`**
 
@@ -64,7 +62,7 @@ observer.observe(targetElement);
 
 **`threshold`**
 
-最后，threshold（阈值）选项指定了一个最小量，表示目标元素和根元素交集时，其自身满足该最小量才会触发回调。取值为 0.0 – 1.0 之间的一个浮点数，所以 75% 左右的交集率应该写成 0.75。如果希望在多个点触发回调，也可以传入一个值的数组，如  `[0.33, 0.66, 1.0]`。
+最后，threshold（阈值）选项指定了一个最小量，表示目标元素和根元素交集时，其自身满足该最小量才会触发回调。取值为 0.0 – 1.0 之间的一个浮点数，所以 75% 左右的交集率应该写成 0.75。如果希望在多个点触发回调，也可以传入一个值的数组，如 `[0.33, 0.66, 1.0]`。
 
 看到这里可能会有些疑问，这个交集又是怎么计算的呢？在`IntersectionObserver API`中所有的图形都会被看成矩形来计算，那些不规则的图形会被转化为能包裹它的的最小矩形参与交集计算。
 
@@ -76,7 +74,7 @@ observer.observe(targetElement);
 
 ```typescript
 callback IntersectionObserverCallback = void (
-    sequence<IntersectionObserverEntry> entries, 
+    sequence<IntersectionObserverEntry> entries,
     IntersectionObserver observer
 );
 ```
@@ -101,11 +99,11 @@ interface IntersectionObserverEntry {
 
 **time**：从首次创建观察者到触发此交集改变的时间（以毫秒为单位）
 
-**rootBounds**：根元素矩形区域的信息，如果没有设置根元素则返回null。
+**rootBounds**：根元素矩形区域的信息，如果没有设置根元素则返回 null。
 
-**boundingClientRect**：目标元素的矩形区域的信息。
+**boundingClientRect**：目标元素的矩形区域的信息。边界值的计算和`element.getBoundingClientRect()`一致。
 
-**intersectionRect**：目标元素与视口（或根元素）的交叉区域的信息。
+**intersectionRect**：目标元素与视口（或根元素）的交叉区域的信息。边界值的计算和`element.getBoundingClientRect()`一致。
 
 **isIntersecting**：目标元素与根元素是否相交
 
@@ -119,11 +117,15 @@ interface IntersectionObserverEntry {
 
 1、确定相交时目标元素相对于根元素的位置
 
+通过`boundingClientRect`和`intersectionRect`的 top 值的比较来确定目标元素的位置。
+
 [demo1](https://codepen.io/gentlecoder/pen/MWjVVoE)
 
 2、为粘性布局创建相应的效果
 
 [demo2](https://codepen.io/gentlecoder/pen/yLaKKPz)
+
+通过监听目标元素与父元素的相交情况来动态的给目标元素添加类，从而实现粘性布局中特殊的效果。
 
 ## 兼容性
 

@@ -8,13 +8,13 @@ subtitle: 欲买桂花同载酒，终不似，少年游
 description: 目前就职于中兴。擅长各项前端技能，深入研究各种前端框架。
 author: gentlecoder
 email: 610249080@qq.com
-keywords: "前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,vue,angularjs"
+keywords: '前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,vue,angularjs'
 language:
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://gentlecoder.com
+url: http://gentlecoder.cn
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -27,7 +27,7 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render: ["pixiv/*.js"]
+skip_render: ['pixiv/*.js']
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -81,6 +81,8 @@ deploy:
   type: git
   repo: git@github.com:gentlecoder/gentlecoder.github.io.git
   branch: master
+  name: gentlecoder
+  email: 610249080@qq.com
 
 jsonContent:
   meta: false
