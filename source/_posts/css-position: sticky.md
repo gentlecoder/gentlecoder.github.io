@@ -1,5 +1,5 @@
 ---
-title: css-position: sticky
+title: css position:sticky
 date: 2021-03-09 11:17:31
 tags:
   - css
